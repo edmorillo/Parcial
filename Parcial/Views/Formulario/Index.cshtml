@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Parcial.Models.Formulario>
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h1>Datos de Registro</h1>
+
+<p>
+    <a asp-action="Create"><input type="submit" value="Agregar" class="btn btn-primary" /></a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Condicion_Iva)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cuit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Razon_Social)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Domicilio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Condicion_Venta)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Condicion_Iva)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cuit)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Razon_Social)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Domicilio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Condicion_Venta)
+                </td>
+                <td>
+
+                    <a asp-action="Edit" asp-route-id="@item.Cuit"> <input type="submit" value="Editar" class="btn btn-primary" /></a> |
+                    <a asp-action="Details" asp-route-id="@item.Cuit"><input type="submit" value="Detalle" class="btn btn-primary" /></a> |
+                    <a asp-action="Delete" asp-route-id="@item.Cuit"><input type="submit" value="Borrar" class="btn btn-primary" /></a>
+                  
+                </td>
+                
+            </tr>
+        }
+    </tbody>
+</table>
